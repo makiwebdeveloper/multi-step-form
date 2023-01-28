@@ -5,7 +5,7 @@ import {
   PickAddOns,
   FinishingUp,
 } from "./components/screens";
-import { useMultiStepForm } from "./contexts/MultiStepFormContext";
+import { useMultiStepForm } from "./contexts";
 
 const steps = [
   <PersonalInfo />,

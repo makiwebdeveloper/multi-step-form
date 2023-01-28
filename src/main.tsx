@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { MultiStepFormProvider } from "./contexts/MultiStepFormContext";
+import { MultiStepFormProvider } from "./contexts";
 
 ReactDOM.render(
   <React.StrictMode>

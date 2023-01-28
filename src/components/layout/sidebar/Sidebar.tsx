@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useMultiStepForm } from "../../../contexts";
 import styles from "./Sidebar.module.scss";
 
 const steps = [
@@ -11,7 +12,7 @@ const steps = [
 interface Props {}
 
 const Sidebar: FC<Props> = () => {
-  const currentStep = 1;
+  const { currentStep } = useMultiStepForm();
 
   return (
     <div className={styles.sidebar}>
@@ -24,9 +25,7 @@ const Sidebar: FC<Props> = () => {
               {item.step}
             </span>
             <div className={styles.itemInfo}>
-              <p className={styles.step}>
-                STEP {item.step}
-              </p>
+              <p className={styles.step}>STEP {item.step}</p>
               <p className={styles.title}>{item.title}</p>
             </div>
           </li>

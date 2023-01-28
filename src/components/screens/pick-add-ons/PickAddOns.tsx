@@ -1,10 +1,11 @@
 import { FC } from "react";
+import { FormStep } from "../../../widgets";
 import styles from "./PickAddOns.module.scss";
 
 interface Props {}
 
 const PickAddOns: FC<Props> = () => {
-  return <div>PickAddOns</div>;
+  return <FormStep>PickAddOns</FormStep>;
 };
 
 export default PickAddOns;

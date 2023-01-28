@@ -2,6 +2,13 @@ import { createContext, FC, useContext, useState } from "react";
 
 interface IContext {
   currentStep: number;
+  data: {
+    name: string;
+    email: string;
+    password: string;
+  };
+  nextStep: (newData: any, isFinalStep: boolean) => void;
+  previousStep: (newData: any) => void;
 }
 
 const MultiStepFormContext = createContext<IContext | null>(null);
@@ -10,9 +17,32 @@ export const useMultiStepForm = () =>
 
 export const MultiStepFormProvider: FC = ({ children }) => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const nextStep = (newData: any, isFinalStep = false) => {
+    setData((prev) => ({ ...prev, ...newData }));
+    if (isFinalStep) {
+      console.table({ ...data, ...newData });
+      return;
+    }
+    setCurrentStep((prev) => prev + 1);
+  };
+
+  const previousStep = (newData: any) => {
+    if (currentStep === 0) return;
+    setData((prev) => ({ ...prev, ...newData }));
+    setCurrentStep((prev) => prev - 1);
+  };
 
   const value: IContext = {
     currentStep,
+    data,
+    nextStep,
+    previousStep,
   };
 
   return (
