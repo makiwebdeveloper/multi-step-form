@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Layout } from "./components/layout";
 import {
   PersonalInfo,
@@ -6,6 +5,7 @@ import {
   PickAddOns,
   FinishingUp,
 } from "./components/screens";
+import { useMultiStepForm } from "./contexts/MultiStepFormContext";
 
 const steps = [
   <PersonalInfo />,
@@ -15,7 +15,7 @@ const steps = [
 ];
 
 const App = () => {
-  const [currentStep, setCurrentStep] = useState(1);
+  const { currentStep } = useMultiStepForm();
 
   return <Layout>{steps[currentStep]}</Layout>;
 };
