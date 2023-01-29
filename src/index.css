@@ -5,3 +5,11 @@
 body {
   @apply font-ubuntu;
 }
+
+.title {
+  @apply text-3xl font-bold text-dark-blue;
+}
+
+.description {
+  @apply text-gray-400;
+}

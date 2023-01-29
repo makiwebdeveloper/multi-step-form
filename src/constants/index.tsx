@@ -1,7 +1,10 @@
+import { TbBrandAppleArcade } from "react-icons/tb";
+import { IoLogoGameControllerA, IoLogoGameControllerB } from "react-icons/io";
+
 export const plans = [
-  { name: "arcade", price: 9 },
-  { name: "advanced", price: 12 },
-  { name: "pro", price: 15 },
+  { id: 0, name: "arcade", price: 9, icon: <TbBrandAppleArcade /> },
+  { id: 1, name: "advanced", price: 12, icon: <IoLogoGameControllerA /> },
+  { id: 2, name: "pro", price: 15, icon: <IoLogoGameControllerB /> },
 ];
 
 export const addOnses = [

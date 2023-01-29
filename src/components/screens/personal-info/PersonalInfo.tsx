@@ -19,17 +19,25 @@ const PersonalInfo: FC<Props> = () => {
       })}
     >
       <div>
-        <Input name="name" label="Name" placeholder="e.g. Stephan King" />
-        <Input
-          name="email"
-          label="Email Address"
-          placeholder="e.g. stephanking@gmail.com"
-        />
-        <Input
-          name="phone"
-          label="Phone Number"
-          placeholder="e.g. +123 456 7890"
-        />
+        <div className="mb-3">
+          <h1 className="title">Personal Info</h1>
+          <p className="description">
+            Please provide your name, email address and phone number
+          </p>
+        </div>
+        <div className="flex flex-col gap-3">
+          <Input name="name" label="Name" placeholder="e.g. Stephan King" />
+          <Input
+            name="email"
+            label="Email Address"
+            placeholder="e.g. stephanking@gmail.com"
+          />
+          <Input
+            name="phone"
+            label="Phone Number"
+            placeholder="e.g. +123 456 7890"
+          />
+        </div>
       </div>
     </FormStep>
   );

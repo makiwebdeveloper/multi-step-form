@@ -15,6 +15,9 @@ module.exports = {
       red: colors.red,
       green: colors.green,
       yellow: colors.yellow,
+      orange: colors.orange,
+      pink: colors.pink,
+      cyan: colors.cyan,
     },
     fontFamily: {
       ubuntu: ["Ubuntu", "sans-serif"],
