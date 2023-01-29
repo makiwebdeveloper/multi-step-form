@@ -26,9 +26,11 @@ const FormStep: FC<Props> = ({
       validationSchema={validationSchema}
     >
       {({ values }) => (
-        <Form>
-          {children}
-          <Navigation previousStep={() => previousStep(values)} />
+        <Form className="">
+          <div className="">
+            {children}
+            <Navigation previousStep={() => previousStep(values)} />
+          </div>
         </Form>
       )}
     </Formik>

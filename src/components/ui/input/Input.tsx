@@ -1,5 +1,6 @@
-import { Field } from "formik";
 import { FC } from "react";
+import { Field } from "formik";
+import styles from "./Input.module.scss";
 
 const CustomInput: FC<any> = ({
   label,
@@ -8,28 +9,30 @@ const CustomInput: FC<any> = ({
   ...props
 }) => {
   return (
-    <label className="">
-      <div className="flex justify-between items-center mb-1">
+    <label>
+      <div className={styles.infoContainer}>
         <p
-          className={`font-semibold text-sm ${
+          className={
             touched[field.name] && errors[field.name]
-              ? "text-red-600"
-              : "text-dark-blue"
-          }`}
+              ? styles.notValidLabel
+              : styles.validLabel
+          }
         >
           {label}
         </p>
         {touched[field.name] && errors[field.name] && (
-          <p className="text-red-600 text-sm">{errors[field.name]}</p>
+          <p className={styles.errorText}>{errors[field.name]}</p>
         )}
       </div>
       <input
         type="text"
         {...field}
         {...props}
-        className={`border w-full outline-none rounded-md px-4 py-2 ${
-          touched[field.name] && errors[field.name] ? "border-red-400" : ""
-        }`}
+        className={
+          touched[field.name] && errors[field.name]
+            ? styles.notValidInput
+            : styles.validInput
+        }
       />
     </label>
   );

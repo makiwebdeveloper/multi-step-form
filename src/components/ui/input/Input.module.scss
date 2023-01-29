@@ -1,0 +1,22 @@
+.infoContainer {
+  @apply flex justify-between items-center mb-1;
+
+  .notValidLabel {
+    @apply font-semibold text-sm text-red-600;
+  }
+  .validLabel {
+    @apply font-semibold text-sm text-dark-blue;
+  }
+
+  .errorText {
+    @apply text-red-600 text-sm;
+  }
+}
+
+.validInput {
+  @apply border w-full outline-none rounded-md px-4 py-2;
+}
+
+.notValidInput {
+  @apply border w-full outline-none rounded-md px-4 py-2 border-red-400 placeholder:text-red-400;
+}

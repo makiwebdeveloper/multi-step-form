@@ -1,4 +1,3 @@
-import { Field } from "formik";
 import { FC } from "react";
 import { FormStep } from "../../../widgets";
 import { Input } from "../../ui";
@@ -18,8 +17,10 @@ const PersonalInfo: FC<Props> = () => {
           .required("Email is required"),
       })}
     >
-      <Input name="name" label="Name" placeholder="Name"  />
-      <Input name="email" label="Email" placeholder="Email"  />
+      <div className="flex flex-col gap-5">
+        <Input name="name" label="Name" placeholder="Name" />
+        <Input name="email" label="Email" placeholder="Email" />
+      </div>
     </FormStep>
   );
 };
