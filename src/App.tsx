@@ -17,7 +17,7 @@ const steps = [
 const App = () => {
   const { currentStep } = useMultiStepForm();
 
-  return <Layout>{steps[currentStep]}</Layout>;
+  return <div>{steps[currentStep]}</div>;
 };
 
 export default App;

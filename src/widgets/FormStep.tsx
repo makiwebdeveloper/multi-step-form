@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Formik, Form } from "formik";
-import Navigation from "../components/layout/navigation/Navigation";
-import { useMultiStepForm } from "../contexts/MultiStepFormContext";
+import { useMultiStepForm } from "../contexts";
+import { Layout } from "../components/layout";
 
 interface Props {
   isFinalStep?: boolean;
@@ -13,7 +13,7 @@ const FormStep: FC<Props> = ({
   isFinalStep = false,
   validationSchema,
 }) => {
-  const { data, nextStep, previousStep } = useMultiStepForm();
+  const { data, nextStep } = useMultiStepForm();
 
   const handleSubmit = (values: any) => {
     nextStep(values, isFinalStep);
@@ -26,11 +26,8 @@ const FormStep: FC<Props> = ({
       validationSchema={validationSchema}
     >
       {({ values }) => (
-        <Form className="">
-          <div className="">
-            {children}
-            <Navigation previousStep={() => previousStep(values)} />
-          </div>
+        <Form>
+          <Layout values={values}>{children}</Layout>
         </Form>
       )}
     </Formik>
