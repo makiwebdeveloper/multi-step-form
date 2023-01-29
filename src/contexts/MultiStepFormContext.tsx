@@ -7,7 +7,7 @@ interface IContext {
     email: string;
     phone: string;
     plan: string;
-    addOns: string;
+    addOns: string[];
   };
   nextStep: (newData: any, isFinalStep: boolean) => void;
   previousStep: (newData: any) => void;
@@ -24,7 +24,7 @@ export const MultiStepFormProvider: FC = ({ children }) => {
     email: "",
     phone: "",
     plan: "arcade",
-    addOns: "",
+    addOns: [],
   });
 
   const nextStep = (newData: any, isFinalStep = false) => {
