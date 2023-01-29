@@ -15,11 +15,21 @@ const PersonalInfo: FC<Props> = () => {
           .string()
           .email("Email is not a valid")
           .required("Email is required"),
+        phone: yup.string().required("Phone is required"),
       })}
     >
-      <div className="flex flex-col gap-5">
-        <Input name="name" label="Name" placeholder="Name" />
-        <Input name="email" label="Email" placeholder="Email" />
+      <div>
+        <Input name="name" label="Name" placeholder="e.g. Stephan King" />
+        <Input
+          name="email"
+          label="Email Address"
+          placeholder="e.g. stephanking@gmail.com"
+        />
+        <Input
+          name="phone"
+          label="Phone Number"
+          placeholder="e.g. +123 456 7890"
+        />
       </div>
     </FormStep>
   );

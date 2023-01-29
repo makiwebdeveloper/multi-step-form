@@ -5,7 +5,9 @@ interface IContext {
   data: {
     name: string;
     email: string;
-    password: string;
+    phone: string;
+    plan: string;
+    addOns: string;
   };
   nextStep: (newData: any, isFinalStep: boolean) => void;
   previousStep: (newData: any) => void;
@@ -20,7 +22,9 @@ export const MultiStepFormProvider: FC = ({ children }) => {
   const [data, setData] = useState({
     name: "",
     email: "",
-    password: "",
+    phone: "",
+    plan: "arcade",
+    addOns: "",
   });
 
   const nextStep = (newData: any, isFinalStep = false) => {
