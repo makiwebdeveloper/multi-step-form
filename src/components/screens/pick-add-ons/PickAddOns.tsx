@@ -22,11 +22,15 @@ const PickAddOns: FC<Props> = () => {
   return (
     <FormStep>
       <div>
-        <div role="group" className="flex flex-col gap-3">
+        <div>
+          <h1 className="title">Pick add-ons</h1>
+          <p className="description">Add ons help enhance your gaming experience</p>
+        </div>
+        <div role="group" className="flex flex-col gap-3 mt-3">
           {addOnses.map((addOns) => (
             <label
               key={addOns.name}
-              className={`border rounded-lg p-3 cursor-pointer flex items-center gap-3 ${
+              className={`border rounded-lg px-5 py-2 cursor-pointer flex items-center gap-5 ${
                 checkedAddOnses.find((item) => item === addOns.name)
                   ? "border-dark-blue bg-cyan-100 bg-opacity-20"
                   : "border-white"
@@ -40,7 +44,7 @@ const PickAddOns: FC<Props> = () => {
                 />
               <div className="flex items-center justify-between w-full">
                 <div>
-                  <p className="text-dark-blue font-semibold capitalize">
+                  <p className="text-dark-blue font-semibold">
                     {addOns.name}
                   </p>
                   <p className="text-gray-400 text-sm">{addOns.description}</p>
