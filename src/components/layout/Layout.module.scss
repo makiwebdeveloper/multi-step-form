@@ -1,0 +1,23 @@
+.app {
+  @apply w-screen h-screen bg-light-blue
+         md:flex md:items-center md:justify-center;
+}
+
+.wrapper {
+  @apply flex gap-[15px] h-full
+         md:bg-white md:w-[700px] md:h-[450px] md:p-[15px] md:shadow-2xl md:rounded-xl;
+}
+
+.sidebar {
+  @apply absolute top-0 left-0 w-full h-[200px]
+         md:static md:w-[200px] md:h-auto md:rounded-xl;
+}
+
+.content {
+  @apply bg-white absolute w-[90%] min-h-[300px] left-[50%] translate-x-[-50%] top-[100px] shadow-xl rounded-xl p-[20px] flex flex-col justify-between
+         md:static md:w-auto md:h-auto md:left-0 md:translate-x-0 md:top-0 md:shadow-none md:flex-1 md:rounded-none md:p-5;
+}
+
+.navigation {
+  @apply absolute bottom-0 bg-white h-[100px] md:h-auto w-full md:p-5;
+}

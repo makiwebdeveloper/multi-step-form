@@ -1,0 +1,31 @@
+.sidebar {
+  @apply bg-blue md:rounded-xl h-full w-full md:p-[20px];
+}
+
+.list {
+  @apply flex gap-[15px] h-[100px] justify-center md:h-auto md:flex-col;
+}
+
+.item {
+  @apply flex items-center gap-[15px];
+
+  span {
+    @apply w-8 h-8 border border-white rounded-full flex items-center justify-center text-white font-semibold;
+  }
+
+  .activeIcon {
+    @apply border-light-blue bg-light-blue text-dark-blue;
+  }
+
+  .itemInfo {
+    @apply hidden md:block;
+
+    .step {
+      @apply text-xs text-white opacity-80 tracking-wider;
+    }
+
+    .title {
+      @apply text-sm text-white tracking-wider;
+    }
+  }
+}
