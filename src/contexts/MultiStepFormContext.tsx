@@ -30,7 +30,7 @@ export const MultiStepFormProvider: FC = ({ children }) => {
   const nextStep = (newData: any, isFinalStep = false) => {
     setData((prev) => ({ ...prev, ...newData }));
     if (isFinalStep) {
-      console.table({ ...data, ...newData });
+      console.log({ ...data, ...newData });
       return;
     }
     setCurrentStep((prev) => prev + 1);
